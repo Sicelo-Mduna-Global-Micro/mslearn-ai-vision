@@ -149,8 +149,8 @@ namespace image_analysis
                     Rectangle rect = new Rectangle(r.X, r.Y, r.Width, r.Height);
                     graphics.DrawRectangle(pen, rect);
                     
-                    Return the confidence of the person detected
-                    Console.WriteLine($"   Bounding box {person.BoundingBox.ToString()}, Confidence: {person.Confidence:F2}");
+                    // Return the confidence of the person detected
+                    // Console.WriteLine($"   Bounding box {person.BoundingBox.ToString()}, Confidence: {person.Confidence:F2}");
                 }
 
                 // Save annotated image
