@@ -63,6 +63,13 @@ namespace image_analysis
                                                      FileMode.Open);
 
             // Get result with specified features to be retrieved
+            ImageAnalysisResult result = client.Analyze(
+                BinaryData.FromStream(stream),
+                VisualFeatures.Caption | 
+                VisualFeatures.DenseCaptions |
+                VisualFeatures.Objects |
+                VisualFeatures.Tags |
+                VisualFeatures.People);
             
             
             // Display analysis results
