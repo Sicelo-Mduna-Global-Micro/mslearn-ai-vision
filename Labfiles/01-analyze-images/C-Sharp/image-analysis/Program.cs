@@ -34,7 +34,11 @@ namespace image_analysis
                     imageFile = args[0];
                 }
 
+                
                 // Authenticate Azure AI Vision client
+                ImageAnalysisClient client = new ImageAnalysisClient(
+                    new Uri(aiSvcEndpoint),
+                    new AzureKeyCredential(aiSvcKey));
 
                 
                 // Analyze image
