@@ -72,6 +72,20 @@ namespace detect_people
                 Pen pen = new Pen(Color.Cyan, 3);
                 
                 // Draw bounding box around detected people
+                foreach (DetectedPerson person in result.People.Values)
+                {
+                    if (person.Confidence > 0.5) 
+                    {
+                        // Draw object bounding box
+                        var r = person.BoundingBox;
+                        Rectangle rect = new Rectangle(r.X, r.Y, r.Width, r.Height);
+                        graphics.DrawRectangle(pen, rect);
+                    }
+
+                    // Return the confidence of the person detected
+                    //Console.WriteLine($"   Bounding box {person.BoundingBox.ToString()}, Confidence: {person.Confidence:F2}");
+                }
+
                 
 
                 // Save annotated image
