@@ -29,6 +29,10 @@ namespace read_text
                 string aiSvcKey = configuration["AIServicesKey"];
 
                 // Authenticate Azure AI Vision client
+                ImageAnalysisClient client = new ImageAnalysisClient(
+                    new Uri(aiSvcEndpoint),
+                    new AzureKeyCredential(aiSvcKey));
+
 
 
                 // Menu for text reading functions
