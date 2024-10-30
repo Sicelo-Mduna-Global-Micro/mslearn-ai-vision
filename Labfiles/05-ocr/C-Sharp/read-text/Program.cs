@@ -90,7 +90,7 @@ namespace read_text
                     
                 foreach (var line in result.Read.Blocks.SelectMany(block => block.Lines))
                 {
-                    // Return the text detected in the image
+                    // Return the text detected in the image 
                     Console.WriteLine($"   '{line.Text}'");
                         
                     // Draw bounding box around line
