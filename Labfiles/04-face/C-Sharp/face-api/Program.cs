@@ -29,6 +29,12 @@ namespace analyze_faces
                 string cogSvcKey = configuration["AIServiceKey"];
 
                 // Authenticate Face client
+                ApiKeyServiceClientCredentials credentials = new ApiKeyServiceClientCredentials(cogSvcKey);
+                faceClient = new FaceClient(credentials)
+                {
+                    Endpoint = cogSvcEndpoint
+ };
+
 
 
                 // Menu for face functions
