@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
 // Import namespaces
+using Microsoft.Azure.CognitiveServices.Vision.Face;
+using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
 
 
 
