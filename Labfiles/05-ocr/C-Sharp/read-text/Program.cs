@@ -71,6 +71,36 @@ namespace read_text
                                                      FileMode.Open);
 
             // Use Analyze image function to read text in image
+            ImageAnalysisResult result = client.Analyze(
+                BinaryData.FromStream(stream),
+                // Specify the features to be retrieved
+                VisualFeatures.Read);
+                
+            stream.Close();
+                
+            // Display analysis results
+            if (result.Read != null)
+            {
+                Console.WriteLine($"Text:");
+                
+                // Prepare image for drawing
+                System.Drawing.Image image = System.Drawing.Image.FromFile(imageFile);
+                Graphics graphics = Graphics.FromImage(image);
+                Pen pen = new Pen(Color.Cyan, 3);
+                    
+                foreach (var line in result.Read.Blocks.SelectMany(block => block.Lines))
+                {
+                    // Return the text detected in the image
+                
+                
+                }
+                        
+                // Save image
+                String output_file = "text.jpg";
+                image.Save(output_file);
+                Console.WriteLine("\nResults saved in " + output_file + "\n");   
+            }
+
             
     
         }
