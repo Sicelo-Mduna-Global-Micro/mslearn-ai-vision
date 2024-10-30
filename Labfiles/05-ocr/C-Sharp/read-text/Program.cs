@@ -91,6 +91,34 @@ namespace read_text
                 foreach (var line in result.Read.Blocks.SelectMany(block => block.Lines))
                 {
                     // Return the text detected in the image
+                    Console.WriteLine($"   '{line.Text}'");
+                        
+                    // Draw bounding box around line
+                    var drawLinePolygon = true;
+                        
+                    // Return the position bounding box around each line
+                        
+                        
+                        
+                    // Return each word detected in the image and the position bounding box around each word with the confidence level of each word
+                        
+                        
+                        
+                    // Draw line bounding polygon
+                    if (drawLinePolygon)
+                    {
+                        var r = line.BoundingPolygon;
+                        
+                        Point[] polygonPoints = {
+                            new Point(r[0].X, r[0].Y),
+                            new Point(r[1].X, r[1].Y),
+                            new Point(r[2].X, r[2].Y),
+                            new Point(r[3].X, r[3].Y)
+                        };
+                        
+                        graphics.DrawPolygon(pen, polygonPoints);
+                    }
+
                 
                 
                 }
