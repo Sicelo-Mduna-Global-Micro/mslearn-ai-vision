@@ -97,6 +97,8 @@ namespace read_text
                     var drawLinePolygon = true;
                         
                     // Return the position bounding box around each line
+                    
+                    Console.WriteLine($"   Bounding Polygon: [{string.Join(" ", line.BoundingPolygon)}]");  
                         
                         
                         
