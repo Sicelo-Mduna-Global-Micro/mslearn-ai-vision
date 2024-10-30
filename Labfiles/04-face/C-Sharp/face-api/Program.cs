@@ -33,7 +33,7 @@ namespace analyze_faces
                 faceClient = new FaceClient(credentials)
                 {
                     Endpoint = cogSvcEndpoint
- };
+                };
 
 
 
@@ -61,6 +61,13 @@ namespace analyze_faces
             Console.WriteLine($"Detecting faces in {imageFile}");
 
             // Specify facial features to be retrieved
+            IList<FaceAttributeType> features = new FaceAttributeType[]
+            {
+                FaceAttributeType.Occlusion,
+                FaceAttributeType.Blur,
+                FaceAttributeType.Glasses
+            };
+
 
 
             // Get faces
