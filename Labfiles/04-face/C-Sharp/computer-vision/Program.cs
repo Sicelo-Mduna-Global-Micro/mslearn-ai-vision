@@ -51,7 +51,11 @@ namespace detect_people
             using FileStream stream = new FileStream(imageFile,
                                                      FileMode.Open);
 
-            // Get result with specified features to be retrieved (PEOPLE)
+             // Get result with specified features to be retrieved (PEOPLE)
+            ImageAnalysisResult result = client.Analyze(
+                BinaryData.FromStream(stream),
+                VisualFeatures.People);
+
 
             
             // Close the stream
